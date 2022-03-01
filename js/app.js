@@ -21,12 +21,15 @@ const searchPhone = () => {
 const displaySearchResult = phones =>{
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
+
     if(phones.length == 0){
+        
        document.getElementById('error-handling').style.display ='block';
        document.getElementById('noWrite-error-handling').style.display = 'none';
     }
     else{
-        phones.forEach(phone => {
+        phones.slice(0,20).forEach(phone => {
+           
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML =`
@@ -57,7 +60,7 @@ const loadPhoneDetail = phoneId => {
 }
 // display part
 const displayPhoneDetail = phone =>{
-    // console.log(phone.others.Bluetooth);
+    // console.log(phone);
 
     const phoneDetail = document.getElementById('phone-details');
     phoneDetail.textContent ='';
