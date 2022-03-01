@@ -43,8 +43,11 @@ const displaySearchResult = phones =>{
                     </div> 
             </div>
             `;
-            searchResult.appendChild(div);
+             searchResult.appendChild(div);
+            
         })
+
+       
         document.getElementById('error-handling').style.display ='none';
     }  
 
