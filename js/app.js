@@ -19,7 +19,7 @@ const searchPhone = () => {
     }
    
 }
-
+//  searching part
 const displaySearchResult = phones =>{
     // console.log(phones);
     const searchResult = document.getElementById('search-result');
@@ -52,6 +52,7 @@ const displaySearchResult = phones =>{
     }  
 
 }
+// data load part
 const loadPhoneDetail = phoneId => {
     // console.log(phoneId);
     const url = `
@@ -64,6 +65,7 @@ const loadPhoneDetail = phoneId => {
     console.log(data)
 
 }
+// display part
 const displayPhoneDetail = phone =>{
     console.log();
     const phoneDetail = document.getElementById('phone-details');
