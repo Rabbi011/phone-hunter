@@ -23,7 +23,7 @@ const displaySearchResult = phones =>{
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     if(phones.length == 0){
-        console.log('no sadfdsf');
+       document.getElementById('error-handling').style.display ='block';
     }
     else{
         phones.forEach(phone => {
@@ -72,8 +72,7 @@ const displayPhoneDetail = phone =>{
                   <h5 class="card-title"> ChipSet:${phone.mainFeatures.chipSet}</h5>
                   <h5 class="card-title"> DisplaySize:${phone.mainFeatures.displaySize}</h5>
                   <h5 class="card-title"> Memory:${phone.mainFeatures.memory}</h5>
-                  
-                
+                  <h5 class="card-title"> Storage:${phone.mainFeatures.storage}</h5>
                 </div>
     `;
     phoneDetail.appendChild(div);
