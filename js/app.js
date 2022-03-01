@@ -26,25 +26,23 @@ const displaySearchResult = phones =>{
         console.log('no sadfdsf');
     }
     else{
-
-    }
-
-    phones.forEach(phone => {
-        // console.log(phone);
-        const div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML =`
-        <div class="card">
-                <img src="${phone.image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h4 class="card-title">${phone.brand}</h4>
-                  <h5 class="card-title">${phone.phone_name}</h5>
-                  <button onclick="loadPhoneDetail('${phone.slug}')">Detail</button>
-                </div> 
-        </div>
-        `;
-        searchResult.appendChild(div);
-    })
+        phones.forEach(phone => {
+            // console.log(phone);
+            const div = document.createElement('div');
+            div.classList.add('col');
+            div.innerHTML =`
+            <div class="card">
+                    <img src="${phone.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h4 class="card-title">${phone.brand}</h4>
+                      <h5 class="card-title">${phone.phone_name}</h5>
+                      <button onclick="loadPhoneDetail('${phone.slug}')">Detail</button>
+                    </div> 
+            </div>
+            `;
+            searchResult.appendChild(div);
+        })
+    }  
 
 }
 const loadPhoneDetail = phoneId => {
