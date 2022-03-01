@@ -60,8 +60,6 @@ const loadPhoneDetail = phoneId => {
 }
 // display part
 const displayPhoneDetail = phone =>{
-    // console.log(phone);
-
     const phoneDetail = document.getElementById('phone-details');
     phoneDetail.textContent ='';
     const div = document.createElement('div');
@@ -75,6 +73,7 @@ const displayPhoneDetail = phone =>{
            return release;
         }
     }
+    
     // display innerHTML 
     div.innerHTML = `
     <img src="${phone.image}" class="card-img-top" alt="...">
@@ -99,4 +98,6 @@ const displayPhoneDetail = phone =>{
     `;
     phoneDetail.appendChild(div);
 }
+
+
 
