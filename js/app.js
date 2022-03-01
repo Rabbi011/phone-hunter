@@ -72,12 +72,23 @@ const displayPhoneDetail = phone =>{
     phoneDetail.textContent ='';
     const div = document.createElement('div');
     div.classList.add('card');
+
+    const releases = release =>{
+        if(release == ''){
+            return 'No release date';
+        }
+        else{
+           return release;
+        }
+    
+    }
+
     div.innerHTML = `
     <img src="${phone.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h4 class="card-title">Brand: ${phone.brand}</h4>
                   <h5 class="card-title"> Model Name: ${phone.name}</h5>
-                  <h5 class="card-title"> Release Date:${phone.releaseDate}</h5>
+                  <h5 class="card-title"> Release Date:${releases(phone.releaseDate)}</h5
                   <h5 class="card-title"> ChipSet:${phone.mainFeatures.chipSet}</h5>
                   <h5 class="card-title"> DisplaySize:${phone.mainFeatures.displaySize}</h5>
                   <h5 class="card-title"> Memory:${phone.mainFeatures.memory}</h5>
@@ -86,3 +97,4 @@ const displayPhoneDetail = phone =>{
     `;
     phoneDetail.appendChild(div);
 }
+
