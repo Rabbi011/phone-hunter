@@ -4,7 +4,8 @@ const searchPhone = () => {
     // console.log(searchText);
     searchPhone.value = '';
     if(searchText == ''){
-console.log('write sonme thihfsaj');
+      document.getElementById('noWrite-error-handling').style.display = 'block';
+      document.getElementById('error-handling').style.display ='none';
     }
     else{
         const url = `
@@ -14,6 +15,7 @@ console.log('write sonme thihfsaj');
         fetch(url)
         .then(response =>response.json())
         .then(data => displaySearchResult(data.data));
+        document.getElementById('noWrite-error-handling').style.display = 'none';
     }
    
 }
@@ -24,6 +26,7 @@ const displaySearchResult = phones =>{
     searchResult.textContent = '';
     if(phones.length == 0){
        document.getElementById('error-handling').style.display ='block';
+       document.getElementById('noWrite-error-handling').style.display = 'none';
     }
     else{
         phones.forEach(phone => {
@@ -42,6 +45,7 @@ const displaySearchResult = phones =>{
             `;
             searchResult.appendChild(div);
         })
+        document.getElementById('error-handling').style.display ='none';
     }  
 
 }
