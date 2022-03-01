@@ -34,8 +34,8 @@ const displaySearchResult = phones =>{
             <div class="card">
                     <img src="${phone.image}" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h4 class="card-title">${phone.brand}</h4>
-                      <h5 class="card-title">${phone.phone_name}</h5>
+                    <h4 class="card-title"> Brand: ${phone.brand}</h4>
+                      <h5 class="card-title"> Model Name: ${phone.phone_name}</h5>
                       <button onclick="loadPhoneDetail('${phone.slug}')">Detail</button>
                     </div> 
             </div>
@@ -54,18 +54,25 @@ const loadPhoneDetail = phoneId => {
     fetch(url)
     .then(response =>response.json())
     .then(data =>displayPhoneDetail(data.data))
+    console.log(data)
 
 }
 const displayPhoneDetail = phone =>{
-    console.log(phone);
+    console.log();
     const phoneDetail = document.getElementById('phone-details');
+    phoneDetail.textContent ='';
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
     <img src="${phone.image}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">${phone.brand}</h5>
-                  <h5 class="card-title">${phone.phone_name}</h5>
+                  <h4 class="card-title">Brand: ${phone.brand}</h4>
+                  <h5 class="card-title"> Model Name: ${phone.name}</h5>
+                  <h5 class="card-title"> Release Date:${phone.releaseDate}</h5>
+                  <h5 class="card-title"> ChipSet:${phone.mainFeatures.chipSet}</h5>
+                  <h5 class="card-title"> DisplaySize:${phone.mainFeatures.displaySize}</h5>
+                  <h5 class="card-title"> Memory:${phone.mainFeatures.memory}</h5>
+                  
                 
                 </div>
     `;
